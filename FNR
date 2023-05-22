@@ -1,0 +1,21 @@
+let s = "Hhello"
+
+func firstNonRepeated(input: String) -> String {
+    
+    if input == "" { return "" }
+    
+    let lower = input.lowercased()
+
+    let trimmed = lower.trimmingCharacters(in: .whitespaces)
+    
+    for character in trimmed {
+        
+        if trimmed.firstIndex(of: character) == trimmed.lastIndex(of: character) {
+            
+            return String(character)
+        }
+    }
+    return ""
+}
+
+print (firstNonRepeated(input: s))
